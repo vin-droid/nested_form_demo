@@ -1,0 +1,20 @@
+
+
+
+<p>
+<%= f.label :title, "Album Title" %><br />
+  <%= f.text_field :title%><br />
+  <%= f.check_box :_destroy %>
+  <%= f.label :_destroy, "Delete Album" %>
+</p>
+
+<%=  f.fields_for :photos do |builder|%>
+	<%= render "photo_fields" ,f:builder%>
+<%end%>
+
+
+<%= f.fields_for :videos do |builder|%>
+	<%= render "video_fields" ,f: builder%>
+<%end%>
+
+

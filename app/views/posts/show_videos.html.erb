@@ -1,0 +1,7 @@
+
+
+
+<h1>All videos</h1>
+
+<% @videos.each do |video|%>
+ <%= video_tag  video.video.url, controls: true, style: "max-width: 100%;"%><%end%>

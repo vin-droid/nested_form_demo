@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+ <% @photos.each do |photo|%>
+	<%= photo_tag photo.image%> <br>
+	<%end%>
+</p>
+
+

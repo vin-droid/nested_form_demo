@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <% @videos.each do |video|%>
+	<%= video_tag video.video%> <br>
+	<%end%>
+</p>
+
+
