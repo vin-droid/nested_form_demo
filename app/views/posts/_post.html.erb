@@ -3,6 +3,7 @@
 <strong><%= post.title%></strong> <br>
 <%photos = post.album.photos%>
 <%videos = post.album.videos%>
+<%comments = post.comments%>
 
 Photos : 
 <%= link_to  "#{photos.count}" ,album_photos_path(post.album) %>
@@ -13,7 +14,8 @@ Photos :
 Videos :
 <%= link_to  "#{videos.count}" ,album_videos_path(post.album) %>
 
-
+Comments :
+<%= link_to  "#{comments.count}" ,post_path(post) %>
 
 
  <%= link_to 'Show', post_path(post) %>

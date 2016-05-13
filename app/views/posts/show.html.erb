@@ -22,7 +22,13 @@
 </div>
 
 
+<div>
+<%@comments = @post.comments%>
 
+<%@comments.each do |comment|%>
+<%= comment.content%> <br>
+<%end%>
+</div>
 
 
 

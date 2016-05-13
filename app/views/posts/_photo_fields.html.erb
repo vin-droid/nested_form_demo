@@ -5,8 +5,11 @@
 <p>
 	<%= f.label :image, "Photo" %>
 	<%= f.file_field  :image%>
+	
+	<% unless f.object.new_record? %>
 	<%= f.check_box :_destroy %>
 	<%= f.label :_destroy, "Delete" %>
+	<%end%>
 </p>
 
 

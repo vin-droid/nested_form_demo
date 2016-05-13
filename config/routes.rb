@@ -1,9 +1,17 @@
 Rails.application.routes.draw do
-  resources :posts
+  #resources :posts
+    resources :posts do
+      member do
+        get 'show_comments'
+      end
+    end
   root 'posts#index'
 
    get    '/posts/album/:album_id/videos' => 'posts#show_videos' ,as: :album_videos 
    get    '/posts/album/:album_id/photos' => 'posts#show_photos' ,as: :album_photos 
+
+
+
 
 # resources :album do
 #   resource :posts

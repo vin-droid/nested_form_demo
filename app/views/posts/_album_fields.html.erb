@@ -4,8 +4,11 @@
 <p>
 <%= f.label :title, "Album Title" %><br />
   <%= f.text_field :title%><br />
-  <%= f.check_box :_destroy %>
-  <%= f.label :_destroy, "Delete Album" %>
+
+	<% unless f.object.new_record? %>
+	<%= f.check_box :_destroy %>
+	<%= f.label :_destroy, "Delete Album" %>
+	<%end%>
 </p>
 
 <%=  f.fields_for :photos do |builder|%>

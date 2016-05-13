@@ -7,6 +7,7 @@ before_action :find_params ,only:[:show,:update,:edit,:destroy]
   end
   
   def show
+     @comment = @post.comments.build
   end
   
   def new
@@ -49,8 +50,7 @@ before_action :find_params ,only:[:show,:update,:edit,:destroy]
   end
 
 
-
-
+#=========================================================================#
 def show_videos
   p "================= #{params.inspect} show videos calling=========="
     @videos = Video.where(album_id: params[:album_id])
@@ -62,7 +62,15 @@ def show_photos
     @photos = Photo.where(album_id: params[:album_id])
 end
 
+def show_comments
+   p "================= #{params.inspect}  show photos calling=========="
+    @comments = Comment.where(post_id: params[:id])
+end
 
+
+
+
+#================================================================================#
 
   private
 

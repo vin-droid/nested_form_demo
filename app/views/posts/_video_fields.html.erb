@@ -3,6 +3,9 @@
 <p>
 	<%= f.label :video, "Video" %>
 	<%= f.file_field  :video%>
+
+	   <% unless f.object.new_record? %>
 	<%= f.check_box :_destroy %>
 	<%= f.label :_destroy, "Delete" %>
+	<%end%>
 </p>
